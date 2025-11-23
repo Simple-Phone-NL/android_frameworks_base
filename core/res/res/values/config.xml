@@ -105,6 +105,9 @@
     <string translatable="false" name="status_bar_screen_record">screen_record</string>
     <string translatable="false" name="status_bar_oem_satellite">satellite</string>
 
+
+    <bool name="config_assistantEnabled">false</bool>
+    <!-- custom above-->
     <!-- Flag indicating whether the surface flinger has limited
          alpha compositing functionality in hardware.  If set, the window
          manager will disable alpha trasformation in animations where not
@@ -1150,7 +1153,7 @@
             5 - Go to assistant (Settings.Secure.ASSISTANT)
             6 - Toggle torch on / off (if screen is off)
     -->
-    <integer name="config_longPressOnPowerBehavior">5</integer>
+    <integer name="config_longPressOnPowerBehavior">0</integer>
 
     <!-- The time in milliseconds after which a press on power button is considered "long". -->
     <integer name="config_longPressOnPowerDurationMs">500</integer>
@@ -1169,7 +1172,7 @@
     <!-- Whether the setting to change long press on power behaviour from default to assistant (5)
          is available in Settings.
      -->
-    <bool name="config_longPressOnPowerForAssistantSettingAvailable">true</bool>
+    <bool name="config_longPressOnPowerForAssistantSettingAvailable">false</bool>
 
     <!-- Control the behavior when the user long presses the power button for a long time.
             0 - Nothing
@@ -1392,7 +1395,7 @@
     <!-- The default intensity level for haptic feedback. See
          Settings.System.HAPTIC_FEEDBACK_INTENSITY more details on the constant values and
          meanings. -->
-    <integer name="config_defaultHapticFeedbackIntensity">2</integer>
+    <integer name="config_defaultHapticFeedbackIntensity">3</integer>
     <!-- The default intensity level for media vibrations. See
          Settings.System.MEDIA_VIBRATION_INTENSITY more details on the constant values and
          meanings. -->
@@ -1518,7 +1521,7 @@
     <bool name="config_enable_emergency_call_while_sim_locked">true</bool>
 
     <!-- Is the lock-screen disabled for new users by default -->
-    <bool name="config_disableLockscreenByDefault">false</bool>
+    <bool name="config_disableLockscreenByDefault">true</bool>
 
     <!-- Provides default value for double line clock in lock screen setting:
          0 - Don't show double line clock
@@ -2376,7 +2379,7 @@
     <!-- The name of the package that will hold the assistant role by default. -->
     <string name="config_defaultAssistant" translatable="false" />
     <!-- Whether the default assistant settings should be shown. -->
-    <bool name="config_showDefaultAssistant">true</bool>
+    <bool name="config_showDefaultAssistant">false</bool>
     <!-- The name of the package that will hold the browser role by default. -->
     <string name="config_defaultBrowser" translatable="false">@string/default_browser</string>
     <!-- The name of the package that will hold the dialer role by default. -->
@@ -4021,7 +4024,7 @@
 
     <!-- This config is used to force VoiceInteractionService to start on certain low ram devices.
          It declares the package name of VoiceInteractionService that should be started. -->
-    <string translatable="false" name="config_forceVoiceInteractionServicePackage"></string>
+    <string translatable="false" name="config_forceVoiceInteractionServicePackage">false</string>
 
     <!-- This config is ued to determine whether animations are allowed in low power mode. -->
     <bool name="config_allowAnimationsInLowPowerMode">false</bool>
@@ -4181,11 +4184,11 @@
 
     <!-- Allow the gesture to double tap the power button twice to start the camera while the device
          is non-interactive. -->
-    <bool name="config_cameraDoubleTapPowerGestureEnabled">true</bool>
+    <bool name="config_cameraDoubleTapPowerGestureEnabled">false</bool>
 
     <!-- Allow the gesture to quick tap the power button multiple times to start the emergency sos
          experience while the device is non-interactive. -->
-    <bool name="config_emergencyGestureEnabled">true</bool>
+    <bool name="config_emergencyGestureEnabled">false</bool>
 
     <!-- Default value for Use Emergency SOS in Settings false = disabled, true = enabled -->
     <bool name="config_defaultEmergencyGestureEnabled">true</bool>
@@ -6480,9 +6483,9 @@
     <bool name="config_sensorPrivacyRequiresAuthentication">true</bool>
 
     <!-- Default value for Settings.ASSIST_LONG_PRESS_HOME_ENABLED -->
-    <bool name="config_assistLongPressHomeEnabledDefault">true</bool>
+    <bool name="config_assistLongPressHomeEnabledDefault">false</bool>
     <!-- Default value for Settings.ASSIST_TOUCH_GESTURE_ENABLED -->
-    <bool name="config_assistTouchGestureEnabledDefault">true</bool>
+    <bool name="config_assistTouchGestureEnabledDefault">false</bool>
 
     <!-- Default value for Settings.SEARCH_ALL_ENTRYPOINTS_ENABLED -->
     <bool name="config_searchAllEntrypointsEnabledDefault">true</bool>
