@@ -46,9 +46,9 @@
     <!-- 0 == off, 1 == on-->
     <integer name="def_paired_device_location_mode">1</integer>
     <bool name="assisted_gps_enabled">false</bool>
-    <bool name="def_netstats_enabled">true</bool>
+    <bool name="def_netstats_enabled">false</bool>
     <bool name="def_usb_mass_storage_enabled">true</bool>
-    <bool name="def_wifi_on">false</bool>
+    <bool name="def_wifi_on">true</bool>
     <!-- 0 == never, 1 == only when plugged in, 2 == always -->
     <integer name="def_wifi_sleep_policy">2</integer>
     <bool name="def_wifi_wakeup_enabled">true</bool>
@@ -182,10 +182,10 @@
     <string name="def_device_name_simple">%1$s</string>
 
     <!-- Default for Settings.Secure.WAKE_GESTURE_ENABLED -->
-    <bool name="def_wake_gesture_enabled">true</bool>
+    <bool name="def_wake_gesture_enabled">false</bool>
 
     <!-- Default state of tap to wake -->
-    <bool name="def_double_tap_to_wake">true</bool>
+    <bool name="def_double_tap_to_wake">false</bool>
 
     <!-- Default for Settings.Secure.NFC_PAYMENT_DEFAULT_COMPONENT -->
     <string name="def_nfc_payment_component"></string>
