@@ -92,7 +92,8 @@ public class SQLiteTokenizer {
      *
      * @throws IllegalArgumentException if invalid SQL is encountered.
      */
-    public static void tokenize(@Nullable String sql, int options, Consumer<String> checker) {
+    public static void tokenize(@Nullable String sql, int options,
+            @Nullable Consumer<String> checker) {
         if (sql == null) {
             return;
         }
@@ -112,7 +113,9 @@ public class SQLiteTokenizer {
                 final int end = pos;
 
                 final String token = sql.substring(start, end);
-                checker.accept(token);
+                if (checker != null) {
+                    checker.accept(token);
+                }
 
                 continue;
             }
@@ -149,7 +152,9 @@ public class SQLiteTokenizer {
                     } else {
                         token = tokenUnquoted;
                     }
-                    checker.accept(token);
+                    if (checker != null) {
+                        checker.accept(token);
+                    }
                 } else {
                     if ((options &= OPTION_TOKEN_ONLY) != 0) {
                         throw genException("Non-token detected", sql);
@@ -171,7 +176,9 @@ public class SQLiteTokenizer {
 
                 final String token = sql.substring(quoteStart + 1, quoteEnd);
 
-                checker.accept(token);
+                if (checker != null) {
+                    checker.accept(token);
+                }
                 continue;
             }
             if ((options &= OPTION_TOKEN_ONLY) != 0) {
