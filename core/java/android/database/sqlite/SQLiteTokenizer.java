@@ -156,7 +156,7 @@ public class SQLiteTokenizer {
                         checker.accept(token);
                     }
                 } else {
-                    if ((options &= OPTION_TOKEN_ONLY) != 0) {
+                    if ((options & OPTION_TOKEN_ONLY) != 0) {
                         throw genException("Non-token detected", sql);
                     }
                 }
@@ -181,7 +181,7 @@ public class SQLiteTokenizer {
                 }
                 continue;
             }
-            if ((options &= OPTION_TOKEN_ONLY) != 0) {
+            if ((options & OPTION_TOKEN_ONLY) != 0) {
                 throw genException("Non-token detected", sql);
             }
 
@@ -216,6 +216,7 @@ public class SQLiteTokenizer {
             if (ch == '(') {
                 pos++;
                 level++;
+
                 continue;
             }
 
@@ -225,6 +226,7 @@ public class SQLiteTokenizer {
                 if (level < 0 && (options & OPTION_CHECK_BRACKETS) != 0) {
                     throw genException("Unbalanced brackets", sql);
                 }
+
                 continue;
             }
 
