@@ -2456,6 +2456,11 @@ class DatabaseHelper extends SQLiteOpenHelper {
             }
             loadSetting(stmt, Settings.Global.LID_BEHAVIOR, defaultLidBehavior);
 
+            // SimplePhone: mark Play Protect consent as already given so the
+            // Play Store doesn't post the "Google Play Protect is turned on"
+            // notification after setup. Play Protect itself stays enabled.
+            loadSetting(stmt, "package_verifier_user_consent", 1);
+
             /*
              * IMPORTANT: Do not add any more upgrade steps here as the global,
              * secure, and system settings are no longer stored in a database
